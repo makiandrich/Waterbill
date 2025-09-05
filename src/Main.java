@@ -36,7 +36,7 @@ public class Main {
         System.out.println("Customer Type: " + customerType);
         System.out.println("Gallons Used: " + gallonsUsed);
         System.out.println("Custoemr Name: " + name);
-        System.out.println("Bill: " + bill);
+        System.out.printf("Bill: %.2f\n",bill);
 
 
     }
