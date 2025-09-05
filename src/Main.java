@@ -1,13 +1,34 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Main {
     //method that prints out hello world
     public static void main(String[] args){
         //find the names house type and gallons used
 
-        String name = "Alice";
-        int gallonsUsed = 8000;
-        int customerType = 1; //for the house type 1= single family and 2 is duplex
+        String name = null;
+        int gallonsUsed = 0;
+        int customerType = 0; //for the house type 1= single family and 2 is duplex
         double bill = 0;
 
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+
+        try {
+            System.out.print("ENter customer type 1-Single Family, 2-Duplex: ");
+            customerType = Integer.parseInt(bufferedReader.readLine());
+
+            System.out.print("Enter your name: ");
+            name = bufferedReader.readLine();
+
+            System.out.print("Enter gallons used: ");
+            gallonsUsed = Integer.parseInt(bufferedReader.readLine());
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
         if (customerType == 1) {
             if (gallonsUsed <= 7000) {
@@ -21,7 +42,7 @@ public class Main {
                         + (gallonsUsed - 13000) * (2.70 / 1000.0);
             }
         } else {
-            if (gallonsUsed <= 7000) {
+            if (gallonsUsed <= 9000) {
                 bill = 15.51 + gallonsUsed * (1.97 / 1000.0);
             } else if (gallonsUsed <= 13000) {
                 bill = 15.51 + 9000 * (1.97 / 1000.0)
