@@ -17,7 +17,7 @@ public class Main {
 
 
         try {
-            System.out.print("ENter customer type 1-Single Family, 2-Duplex: ");
+            System.out.print("Enter customer type 1-Single Family, 2-Duplex: ");
             customerType = Integer.parseInt(bufferedReader.readLine());
 
             System.out.print("Enter your name: ");
@@ -56,7 +56,7 @@ public class Main {
 
         System.out.println("Customer Type: " + customerType);
         System.out.println("Gallons Used: " + gallonsUsed);
-        System.out.println("Custoemr Name: " + name);
+        System.out.println("Customer Name: " + name);
         System.out.printf("Bill: %.2f\n",bill);
 
 
