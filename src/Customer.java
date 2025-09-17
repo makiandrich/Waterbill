@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 public class Customer {
     //find the names house type and gallons used
 
-=
+
     //private makes it so that way the only way we can edit the var is inside the class
     private String name;
     private int gallonsUsed;
@@ -17,7 +17,11 @@ public class Customer {
     }
 
     public void setGallonsUsed(int gallonsUsed) {
-        this.gallonsUsed = gallonsUsed;
+        if(gallonsUsed < 0) {
+            System.out.println("Invalid gallonsUsed");
+        }else{
+            this.gallonsUsed = gallonsUsed;
+        }
     }
 
     public String getName() {
@@ -25,7 +29,12 @@ public class Customer {
     }
 
     public void setName(String name) {
-        this.name = name;
+        //string is a refrence or object so validation is slightly differnt
+        if(name.equals("")) {
+            System.out.println("Please enter a name");
+        }else {
+            this.name = name;
+        }
     }
 
     public int getCustomerType() {
