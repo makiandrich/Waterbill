@@ -49,6 +49,7 @@ public class Customer {
         return bill;
     }
 
+    
     final double SINGLE_BASE = 13.21;
     final int SINGLE_TIER1 = 7000;
     final double SINGLE_TIER1_COST = 2.04;
@@ -63,6 +64,7 @@ public class Customer {
     final double DUPLEX_TIER3_COST = 2.60;
     final int TIER2_CUTOFF = 13000;
     final double GALLONS = 1000.0;
+
 
 
     public void calculateBill() {
@@ -111,10 +113,10 @@ public class Customer {
             customerType = Integer.parseInt(bufferedReader.readLine());
 
             System.out.print("Enter your name: ");
-            name = bufferedReader.readLine();
+            setName(bufferedReader.readLine());
 
             System.out.print("Enter gallons used: ");
-            gallonsUsed = Integer.parseInt(bufferedReader.readLine());
+            setGallonsUsed(Integer.parseInt(bufferedReader.readLine()));
 
         } catch (
                 IOException e) {
