@@ -10,7 +10,8 @@ public class Customer {
     private String name;
     private int gallonsUsed;
     private int customerType; //for the house type 1= single family and 2 is duplex
-    private double bill;
+    protected double bill;
+
 
 
     final int TIER2_CUTOFF = 13000;
@@ -62,7 +63,7 @@ public class Customer {
         return bill;
     }
 
-    
+    public void calculateBill() {}
 
 
 

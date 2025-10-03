@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class SingleFamily extends Customer{
     final double SINGLE_BASE = 13.21;
     final int SINGLE_TIER1 = 7000;
@@ -6,6 +10,17 @@ public class SingleFamily extends Customer{
     final double SINGLE_TIER2_COST = 2.35;
     final double SINGLE_TIER3_COST = 2.70;
 
+    protected boolean isLowIncome;
+
+    public boolean isLowIncome() {
+        return isLowIncome;
+    }
+
+    public void setLowIncome(boolean lowIncome) {
+        isLowIncome = lowIncome;
+    }
+
+    @Override
     public void calculateBill() {
 
 
@@ -23,5 +38,24 @@ public class SingleFamily extends Customer{
             }
             //call for the new mathod here
 
+    }
+    public void applyDiscount() {
+        if(isLowIncome){
+            bill = bill *0.9;
+        }
+    }
+    @Override
+    public void customerInput(){
+        super.customerInput();
+
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+
+        try {
+            System.out.println("Is the User a low income? true/false?");
+            isLowIncome = Boolean.parseBoolean(br.readLine());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

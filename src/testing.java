@@ -1,4 +1,4 @@
-/*
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,12 +11,24 @@ public class testing {
 //
     @Test
     public void testSingleFamilyTier1(){
-        Customer customer = new Customer();
-        customer.customerType = 1;
-        customer.gallonsUsed = 6000;
+        Customer customer = new SingleFamily();
+
+        customer.setGallonsUsed(6000);
         customer.calculateBill();
         assertEquals(25.45, customer.bill, 0.01);
     }
+    @Test
+    public void testSingleFamilyTier1LowIncome(){
+    SingleFamily customer = new SingleFamily();
+    customer.setLowIncome(true);
+    customer.setGallonsUsed(6000);
+    customer.calculateBill();
+    customer.applyDiscount();
+    assertEquals(22.9, customer.bill, 0.01);
+    }
+
+}
+    /*
     @Test
     public void testSingleFamily_Below7000(){
         Customer customer = new Customer();
