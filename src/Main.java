@@ -5,7 +5,9 @@ import java.io.InputStreamReader;
 public class Main {
     //method that prints out hello world
     public static void main(String[] args){
-        SingleFamily singleFamily = new SingleFamily();
-        SingleFamily.customerInput();
+        Customer customer = new SingleFamily();
+        customer.customerInput();
+        customer.getGallonsUsed();
+        customer.printCustomerInfo();
     }
 }

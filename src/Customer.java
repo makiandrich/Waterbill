@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class Customer {
+public abstract class Customer {
     //find the names house type and gallons used
 
 
@@ -63,10 +63,15 @@ public class Customer {
         return bill;
     }
 
-    public void calculateBill() {}
+    protected abstract double calculateBill();
 
 
-
+    public void generateBill(){
+        double calculateBill = calculateBill();
+        if(calculateBill < 0){
+            System.out.println("Invalid bill");
+        }
+    }
 
 
 

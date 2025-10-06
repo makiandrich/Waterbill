@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Waterfall.iml" filepath="$PROJECT_DIR$/Waterfall.iml" />
       <module fileurl="file://$PROJECT_DIR$/../hw3/hw3/hw3.iml" filepath="$PROJECT_DIR$/../hw3/hw3/hw3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw6/hw6.iml" filepath="$PROJECT_DIR$/hw6/hw6.iml" />
     </modules>
   </component>
 </project>
