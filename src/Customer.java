@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public abstract class Customer {
     //find the names house type and gallons used
@@ -17,6 +18,7 @@ public abstract class Customer {
     final int TIER2_CUTOFF = 13000;
     final double GALLONS = 1000.0;
 
+    private static ArrayList <Customer> allCustomer = new ArrayList<Customer>();
 
     public int getTIER2_CUTOFF() {
         return TIER2_CUTOFF;
@@ -63,17 +65,33 @@ public abstract class Customer {
         return bill;
     }
 
+    public static ArrayList<Customer> getAllCustomer() {
+        return allCustomer;
+    }
+
     protected abstract double calculateBill();
 
 
     public void generateBill(){
         double calculateBill = calculateBill();
-        if(calculateBill < 0){
+        double finalBill = applyDiscount(calculateBill);
+
+        if(finalBill < 0){
             System.out.println("Invalid bill");
+        }else{
+            this.bill = finalBill;
+            registeredCustomer();
+
         }
     }
 
 
+    protected double applyDiscount(double calculatedBill){
+        return calculatedBill;
+    }
+    protected void registeredCustomer(){
+        allCustomer.add(this);
+    }
 
     public void customerInput() {
 

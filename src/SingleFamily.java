@@ -39,10 +39,13 @@ public class SingleFamily extends Customer{
             return bill;
 
     }
-    public void applyDiscount() {
+
+    @Override
+    public double applyDiscount(double bill) {
         if(isLowIncome){
             bill = bill *0.9;
         }
+        return  bill;
     }
     @Override
     public void customerInput(){

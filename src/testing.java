@@ -14,7 +14,7 @@ public class testing {
         Customer customer = new SingleFamily();
 
         customer.setGallonsUsed(6000);
-        customer.calculateBill();
+        customer.generateBill();
         assertEquals(25.45, customer.bill, 0.01);
     }
     @Test
@@ -22,8 +22,7 @@ public class testing {
     SingleFamily customer = new SingleFamily();
     customer.setLowIncome(true);
     customer.setGallonsUsed(6000);
-    customer.calculateBill();
-    customer.applyDiscount();
+    customer.generateBill();
     assertEquals(22.9, customer.bill, 0.01);
     }
 
