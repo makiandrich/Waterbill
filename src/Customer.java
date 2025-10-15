@@ -146,7 +146,7 @@ public abstract class Customer {
     }
 
     public void sortCustomerByBill(){
-        Collections.sort(getAllCustomer());
+        getAllCustomer().sort(Comparator.comparingDouble(Customer::getBill));
     }
 
     @Override
