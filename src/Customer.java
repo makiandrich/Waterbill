@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public abstract class Customer {
+public abstract class Customer implements Comparable<Customer> {
     //find the names house type and gallons used
 
 
@@ -153,6 +153,13 @@ public abstract class Customer {
     public String toString() {
         return "Customer Name " + name +"\n" + "Gallons Used "+gallonsUsed + "\n" + "Bill " + bill;
     }
-}
+
+    @Override
+    public int compareTo(Customer o) {
+        //-1  this obj < 0 this obj is smaller and must come first
+        //0 this object == 0 nothing happens
+        //1 this object > 0 this object is larger and must come after
+        return Double.compare(this.bill, o.bill);
+    }
 
 
