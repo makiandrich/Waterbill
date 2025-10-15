@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public abstract class Customer {
     //find the names house type and gallons used
@@ -124,7 +126,33 @@ public abstract class Customer {
         System.out.printf("Bill: %.2f\n", bill);
     }
 
+    public static Customer getHighestBill(){
+        Customer max = getAllCustomer().get(0);
+        for(Customer c : getAllCustomer()){
+            if(c.getBill() > max.getBill()){
+                max = c;
+            }
+        }
+        return max;
+    }
+    public static Customer getLowestBill(){
+        Customer min = getAllCustomer().get(0);
+        for(Customer c : getAllCustomer()){
+            if(c.getBill() < min.getBill()){
+                min = c;
+            }
+        }
+        return min;
+    }
 
+    public void sortCustomerByBill(){
+        Collections.sort(getAllCustomer());
+    }
+
+    @Override
+    public String toString() {
+        return "Customer Name " + name +"\n" + "Gallons Used "+gallonsUsed + "\n" + "Bill " + bill;
+    }
 }
 
 

@@ -13,6 +13,8 @@ public class Main {
         duplex.customerInput();
         duplex.generateBill();
 
+        System.out.println(Customer.getHighestBill());
+
         //System.out.println(Customer.getAllCustomer());
         //for loop for increment thrugh the list
         for(Customer c : Customer.getAllCustomer()){
